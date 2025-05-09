@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-black text-white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberSec Hub</title>
+  <link rel="stylesheet" href="cybrhub.css">
+  <!-- <script src="https://cdn.tailwindcss.com "></script> -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap " rel="stylesheet">
+
+</head>
+
+<body class="min-h-screen flex flex-col items-center p-6 space-y-6">
+<!-- Hacker Background -->
+<div class="background">
+  <div class="matrix-rain"></div>
+</div>
+  <!-- Header -->
+  <h1 id="title" class="text-4xl font-bold text-green-400 text-center">CyberSec Hub</h1>
+  <div id="clock" class="text-sm text-green-400 mb-2"></div>
+
+  <!-- Search Bar -->
+  <input id="search" type="text" placeholder="Search everything..." class="w-full max-w-xl px-4 py-2 rounded bg-zinc-900 border border-zinc-700 focus:outline-none text-center text-green-300" />
+
+  <!-- Tags -->
+  <div id="tag-filters" class="flex flex-wrap justify-center gap-2 mt-2">
+    <button data-tag="linux" class="tag-btn px-3 py-1 rounded border border-green-500 hover:bg-green-500 hover:text-black transition">#linux</button>
+    <button data-tag="exploit" class="tag-btn px-3 py-1 rounded border border-green-500 hover:bg-green-500 hover:text-black transition">#exploit</button>
+    <button data-tag="cve" class="tag-btn px-3 py-1 rounded border border-green-500 hover:bg-green-500 hover:text-black transition">#cve</button>
+    <button data-tag="escalation" class="tag-btn px-3 py-1 rounded border border-green-500 hover:bg-green-500 hover:text-black transition">#escalation</button>
+  </div>
+
+  <!-- Resource Links -->
+  <div class="resource-links grid grid-cols-1 sm:grid-cols-1 md:grid-cols-12 gap-1 w-full max-w-5xl mt-5">
+    <a href="https://srimantb.github.io/notes " target="_blank"><img class="w-full h-auto object-contain" src="https://srimantb.github.io/assets/images/logo.png " alt="Logo" /></a>
+    <a href="https://tryhackme.com " target="_blank"><img class="w-full h-auto object-contain" src="https://assets.tryhackme.com/img/logo/tryhackme_logo_full.svg " alt="THM" /></a>
+    <a href="https://app.hackthebox.com " target="_blank"><img class="w-full h-auto object-contain" src="https://www.hackthebox.com/images/favicon.png " alt="HTB" /></a>
+    <a href="https://youtube.com " target="_blank"><img  class="w-full h-auto object-contain" src="https://www.iconpacks.net/icons/2/free-youtube-logo-icon-2431-thumb.png " alt="YouTube" /></a>
+    <a href="https://portswigger.net " target="_blank"><img class="w-full h-auto object-contain" src="https://avatars.githubusercontent.com/u/13749115?s=200&v=4 " alt="PortSwigger" /></a>
+    <a href="https://0xdf.gitlab.io/" target="_blank"><img class="w-full h-auto object-contain" src="https://0xdf.gitlab.io/assets/icons/favicon-32x32.png" alt="HackTricks" /></a>
+    <a href="https://chatgpt.com " target="_blank"><img class="w-full h-auto object-contain" src="https://brandeps.com/logo-download/C/ChatGPT-logo-vector-01.svg " alt="HackTricks" /></a>
+    <a href="https://chat.qwen.ai/ " target="_blank"><img class="w-full h-auto object-contain" src="https://crystalpng.com/wp-content/uploads/2025/02/Qwen-04.png" alt="HackTricks" /></a>
+    <a href="https://www.exploit-db.com/ " target="_blank"><img class="w-full h-auto object-contain" src="https://www.exploit-db.com/images/spider-white.png" alt="HackTricks" /></a>
+    <a class="shodan" href="https://www.shodan.io/" target="_blank"><img  class="w-full h-auto object-contain" src="https://pbs.twimg.com/profile_images/1105606704090267648/oyZUgnFr_400x400.png" alt="HackTricks" /></a>
+    <a href="https://search.censys.io/ " target="_blank"><img class="w-full h-auto object-contain" src="https://search.censys.io/static/img/og-censys-mark-2025.png" alt="HackTricks" /></a>
+    <a href="https://www.zoomeye.ai/" target="_blank"><img class="w-full h-auto object-contain" src="https://avatars.githubusercontent.com/u/190709925?s=200&v=4" alt="HackTricks" /></a>
+    <a href="https://www.virustotal.com/ " target="_blank"><img class="w-full h-auto object-contain" src="https://www.svgrepo.com/show/331633/virustotal.svg" alt="HackTricks" /></a>
+    <a href="https://chat.qwen.ai/ " target="_blank"><img class="w-full h-auto object-contain" src="https://crystalpng.com/wp-content/uploads/2025/02/Qwen-04.png" alt="HackTricks" /></a>
+
+  </div>
+
+  <!-- Cards Section -->
+  <div id="sections" class="w-full max-w-5xl space-y-4 mt-6">
+    <div class="card bg-zinc-900 p-4 rounded shadow border border-green-800" data-tags="linux exploit escalation">
+        <details>
+          <summary class="cursor-pointer list-none text-xl text-green-300 font-semibold">Linux Vulnerabilities</summary>
+          <div class="mt-2 ml-4 space-y-2">
+            <details>
+              <summary class="text-blue-400 cursor-pointer">Dirty COW</summary>
+              <ul class="ml-4 list-disc mt-1 text-blue-300">
+                <li><a href="https://support.hp.com/lt-en/document/ish_9690157-7720401-16 " target="_blank" class="hover:underline">HP Advisory</a></li>
+                <li><a href="https://access.redhat.com/security/vulnerabilities/DirtyCow " target="_blank" class="hover:underline">RedHat Analysis</a></li>
+              </ul>
+            </details>
+            <details class="mt-2">
+              <summary class="text-blue-400 cursor-pointer">Polkit Privilege Escalation</summary>
+              <ul class="ml-4 list-disc mt-1 text-blue-300">
+                <li><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4034 " target="_blank" class="hover:underline">CVE-2021-4034</a></li>
+                <li><a href="https://access.redhat.com/security/cve/CVE-2021-4034 " target="_blank" class="hover:underline">RedHat Advisory</a></li>
+              </ul>
+            </details>
+          </div>
+          <div class="tags mt-3 flex gap-2 text-xs text-green-500">
+            <span>#linux</span>
+            <span>#exploit</span>
+            <span>#escalation</span>
+          </div>
+        </details>
+      </div>
+
+    <div class="card bg-zinc-900 p-4 rounded shadow border border-green-800" data-tags="windows exploit cve">
+      <details>
+        <summary class="cursor-pointer list-none text-xl text-green-300 font-semibold">Windows EternalBlue</summary>
+        <div class="mt-2 ml-4 text-blue-300">
+          <a href="https://nvd.nist.gov/vuln/detail/CVE-2017-0144 " target="_blank" class="hover:underline">CVE-2017-0144</a>
+        </div>
+        <div class="tags mt-3 flex gap-2 text-xs text-green-500">
+          <span>#windows</span>
+          <span>#exploit</span>
+          <span>#cve</span>
+        </div>
+      </details>
+    </div>
+
+    <div class="card bg-zinc-900 p-4 rounded shadow border border-green-800" data-tags="web xss exploit">
+      <details>
+        <summary class="cursor-pointer list-none text-xl text-green-300 font-semibold">XSS Injection Cheat Sheet</summary>
+        <div class="mt-2 ml-4 text-blue-300">
+          <a href="https://portswigger.net/web-security/cross-site-scripting/cheat-sheet " target="_blank" class="hover:underline">PortSwigger</a>
+        </div>
+        <div class="tags mt-3 flex gap-2 text-xs text-green-500">
+          <span>#web</span>
+          <span>#xss</span>
+          <span>#exploit</span>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <script src="tailwind.min.js"></script>
+  <script src="cybrhub.js"></script>
+</body>
+</html>

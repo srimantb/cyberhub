@@ -1,0 +1,229 @@
+body {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+summary::after {
+  content: " ▶";
+  float: right;
+  transition: transform 0.2s ease;
+}
+details[open] summary::after {
+  content: " ▼";
+}
+  .card {
+    background: linear-gradient(to bottom right, #1f1f1f, #292929);
+    border: 1px solid #333;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);
+    border-color: #00ff99;
+  }
+  
+  .tag {
+    background: #2e2e2e;
+    color: #00ff99;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .tag-button {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 9999px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.9rem;
+    color: #00ff99;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .tag-button:hover {
+    background-color: #00ff99;
+    color: #0f0f0f;
+  }
+  
+  .resource-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .shodan img {
+    width: 110%;
+  }
+  .resource-links a img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0.9);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .resource-links a img:hover {
+    transform: scale(2.2);
+    filter: brightness(1.2);
+  }
+  .tag-button.active {
+    background-color: #00ff99;
+    color: #0f0f0f;
+    font-weight: bold;
+  }
+    
+
+/* Fullscreen background container */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind all content */
+  overflow: hidden;
+}
+
+.matrix-rain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: #0F0;
+  font-family: monospace;
+  overflow: hidden;
+}
+
+.matrix-rain::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(0, 255, 0, 0.05) 0px,
+      rgba(0, 255, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 255, 0, 0.05) 0px,
+      rgba(0, 255, 0, 0.05) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+  animation: flicker 3s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.8;
+  }
+}
+
+.matrix-column {
+  position: absolute;
+  top: -1em;
+  font-size: 1em;
+  white-space: pre;
+  line-height: 1.2em;
+  animation-name: drop;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes drop {
+  0% {
+    top: -1em;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+
+
+  /* Responsive Typography */
+@media (max-width: 640px) {
+  h1#title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .card > details > summary {
+    font-size: 1.1rem;
+  }
+
+  .tags span {
+    font-size: 0.75rem;
+  }
+
+  #search {
+    font-size: 0.9rem;
+  }
+}
+
+/* Adjust Resource Links Grid for Mobile */
+@media (max-width: 768px) {
+  .resource-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .resource-links img {
+    max-height: 40px;
+  }
+}
+
+/* Stack Tag Buttons Vertically on Small Screens */
+@media (max-width: 640px) {
+  #tag-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tag-btn {
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+}
+
+/* Cards Layout - Responsive */
+@media (max-width: 768px) {
+  #sections {
+    padding: 0;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .card details .ml-4 {
+    margin-left: 1rem;
+  }
+}
+
+/* Nested Details Indentation Fix */
+details details {
+  margin-left: 1rem;
+}
+
+@media (max-width: 640px) {
+  details details {
+    margin-left: 0.5rem;
+  }
+}
